@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://djo2k1cvpoukm"]
+
+[ext_resource type="Texture2D" uid="uid://ctnbtsnlylh5p" path="res://Sprite-0021.png" id="1_0qrqu"]
+[ext_resource type="Texture2D" uid="uid://oru0kn25yydu" path="res://Sprite-0005.png" id="1_tg4cr"]
+[ext_resource type="Texture2D" uid="uid://bxutbbxkwndff" path="res://Sprite-0006.png" id="2_37rai"]
+[ext_resource type="Script" uid="uid://chpr58kik0gm8" path="res://texture_button.gd" id="3_37rai"]
+[ext_resource type="Script" uid="uid://dt6bblf2fydvb" path="res://texture_rect.gd" id="3_mx0kw"]
+[ext_resource type="AudioStream" uid="uid://cdgkk3wdmvp68" path="res://universfield-bubble-pop-08-351339.mp3" id="6_w4oxd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ubhxj"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1647703648]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=258664270]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ubhxj")
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=1663531180]
+layout_mode = 2
+texture = ExtResource("1_0qrqu")
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer" unique_id=496450678]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/CenterContainer" unique_id=2141814618]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/CenterContainer/MarginContainer" unique_id=1460461407]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=813631268]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer" unique_id=1472405313]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("1_tg4cr")
+stretch_mode = 2
+script = ExtResource("3_mx0kw")
+
+[node name="CenterContainer2" type="CenterContainer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer" unique_id=1058820347]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2" unique_id=1802217019]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("2_37rai")
+script = ExtResource("3_37rai")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" unique_id=1116242765]
+stream = ExtResource("6_w4oxd")
+
+[connection signal="mouse_entered" from="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" to="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" to="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" to="PanelContainer/CenterContainer/MarginContainer/VBoxContainer/CenterContainer2/TextureButton" method="_on_pressed"]

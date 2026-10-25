@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dfq82oqbybd7k"]
+
+[ext_resource type="Script" uid="uid://cw25777nf42lq" path="res://salad.gd" id="1_c6bdp"]
+[ext_resource type="Texture2D" uid="uid://b7etmteb6sp5c" path="res://food1(salad)-Sheet.png" id="2_c6bdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtk25"]
+size = Vector2(38, 28)
+
+[node name="salad" type="Area2D" unique_id=2051883369]
+script = ExtResource("1_c6bdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1450710044]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_qtk25")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1414237979]
+texture = ExtResource("2_c6bdp")
+hframes = 2

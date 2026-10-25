@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://otkg5dvwo4n0"]
+
+[ext_resource type="Script" uid="uid://cb38u7b4b2llp" path="res://retry.gd" id="1_4nh4k"]
+[ext_resource type="Texture2D" uid="uid://kr6yj8h4nhdo" path="res://Sprite-001412314.png" id="1_af4fq"]
+[ext_resource type="Texture2D" uid="uid://dqm3bvkccwbo7" path="res://Sprite-0015123.png" id="2_g1o2j"]
+[ext_resource type="Script" uid="uid://oqs7tva7m7sg" path="res://quit.gd" id="2_tpdqf"]
+[ext_resource type="Texture2D" uid="uid://kyi2ougbqj1y" path="res://Sprite-0016123.png" id="3_pn7gr"]
+[ext_resource type="Texture2D" uid="uid://dlhfynuh2s64l" path="res://Sprite-001723.png" id="4_b7a41"]
+[ext_resource type="Texture2D" uid="uid://c6xgsos2lvcs4" path="res://Sprite-0018123.png" id="6_7nmon"]
+
+[node name="gameover" type="CanvasLayer" unique_id=288947308]
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1054555931]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer" unique_id=833009198]
+layout_mode = 2
+texture = ExtResource("1_af4fq")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1567950420]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1862990348]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="title_subtitle" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1551023838]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -35
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/title_subtitle" unique_id=909607602]
+layout_mode = 2
+texture = ExtResource("2_g1o2j")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/title_subtitle" unique_id=1393976546]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("3_pn7gr")
+stretch_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1602508601]
+layout_mode = 2
+
+[node name="buttons" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer" unique_id=154704673]
+layout_mode = 2
+
+[node name="retry" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons" unique_id=413660217]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("4_b7a41")
+script = ExtResource("1_4nh4k")
+
+[node name="quit" type="TextureButton" parent="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons" unique_id=1821502453]
+layout_mode = 2
+offset_transform_enabled = true
+texture_normal = ExtResource("6_7nmon")
+texture_pressed = ExtResource("4_b7a41")
+script = ExtResource("2_tpdqf")
+
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" method="_on_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/retry" method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" to="PanelContainer/MarginContainer/VBoxContainer/CenterContainer/buttons/quit" method="_on_pressed"]

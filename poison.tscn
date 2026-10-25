@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://mvl0sb65e2uf"]
+
+[ext_resource type="Texture2D" uid="uid://cq5d3ej2t61hf" path="res://poison.png" id="1_710si"]
+[ext_resource type="Script" uid="uid://dqlddnbiks25f" path="res://poison.gd" id="1_gh8aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtk25"]
+size = Vector2(12, 13)
+
+[node name="poison" type="Area2D" unique_id=1734738045]
+script = ExtResource("1_gh8aa")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=226902072]
+texture = ExtResource("1_710si")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161077220]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_qtk25")

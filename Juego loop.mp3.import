@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvardthy66ga7"
+path="res://.godot/imported/Juego loop.mp3-91e6e2d941cabc29b8fe0fcce9f319a4.mp3str"
+
+[deps]
+
+source_file="res://Juego loop.mp3"
+dest_files=["res://.godot/imported/Juego loop.mp3-91e6e2d941cabc29b8fe0fcce9f319a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
